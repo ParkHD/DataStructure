@@ -23,5 +23,8 @@
     <ClInclude Include="연결리스트.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="DoulbleList0425.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -106,6 +106,7 @@ public:
 		return m_pNode->m_Data;
 	}
 };
+
 template<typename T>
 class CLinkedList
 {
@@ -134,7 +135,6 @@ private:
 	PNODE head;
 	PNODE tail;
 	int m_iSize;
-
 public:
 	void push_back(const T& data) // &쓰는 이유는 구조체나 class큰 값이 올때 참조로 받아오면 속도가빠르다 안쓰면 복사로 받아오기떄문에 늦음
 	{
@@ -142,7 +142,7 @@ public:
 		newNode->m_Data = data;
 
 		PNODE pPrev = tail->m_pPrev;
-
+// 
 		pPrev->m_pNext = newNode;
 		newNode->m_pPrev = pPrev;
 		newNode->m_pNext = tail;
@@ -153,16 +153,16 @@ public:
 	void push_front(const T& data) // &쓰는 이유는 구조체나 class큰 값이 올때 참조로 받아오면 속도가빠르다 안쓰면 복사로 받아오기떄문에 늦음
 	{
 		PNODE newNode = new NODE;
-newNode->m_Data = data;
+		newNode->m_Data = data;
 
-PNODE pNext = head->m_pNext;
+		PNODE pNext = head->m_pNext;
 
-newNode->m_pNext = pNext;
-pNext->m_pPrev = newNode;
-head->m_pNext = newNode;
-newNode->m_pPrev = head;
+		newNode->m_pNext = pNext;
+		pNext->m_pPrev = newNode;
+		head->m_pNext = newNode;
+		newNode->m_pPrev = head;
 
-++m_iSize;
+		++m_iSize;
 	}
 	void pop_back()
 	{

@@ -2,6 +2,7 @@
 #include <vector>
 #include <time.h>
 #include "연결리스트.h"
+#include "DoulbleList0425.h"
 using namespace std;
 
 struct ex
@@ -14,7 +15,7 @@ bool DataSort(const ex& a, const ex& b)
 }
 int main()
 {
-	vector<int> vec;
+	/*vector<int> vec;
 
 	CLinkedList<int> list;
 	for (int i = 0; i < 100; i++)
@@ -57,5 +58,14 @@ int main()
 	for (iterD = dataList.begin(); iterD != iterDEnd; ++iterD)
 	{
 		cout << (*iterD).data << endl;
-	}
+	}*/
+	DoubleList<int> list;
+
+	list.push_back(10);
+	list.push_back(15);
+	list.push_front(20);
+
+	vector<int> vec;
+	vec.push_back(10);
+	cout << *(vec.end()-1) << endl;
 }
