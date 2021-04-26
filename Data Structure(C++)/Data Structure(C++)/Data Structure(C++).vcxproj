@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoulbleList0425.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="연결리스트.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

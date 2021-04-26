@@ -3,6 +3,7 @@
 #include <time.h>
 #include "연결리스트.h"
 #include "DoulbleList0425.h"
+#include "Stack.h"
 using namespace std;
 
 struct ex
@@ -12,6 +13,10 @@ struct ex
 bool DataSort(const ex& a, const ex& b)
 {
 	return a.data > b.data;
+}
+bool func(const int& a, const int& b)
+{
+	return a > b;
 }
 int main()
 {
@@ -59,13 +64,46 @@ int main()
 	{
 		cout << (*iterD).data << endl;
 	}*/
-	DoubleList<int> list;
 
+
+	/*DoubleList<int> list;
+
+	list.push_back(15);
 	list.push_back(10);
 	list.push_back(15);
 	list.push_front(20);
 
-	vector<int> vec;
-	vec.push_back(10);
-	cout << *(vec.end()-1) << endl;
+
+	for (DoubleList<int>::iterator i = list.begin(); i != list.end(); ++i)
+	{
+		cout << *i << endl;
+	}
+	list.sort(func);
+	for (DoubleList<int>::iterator i = list.begin(); i != list.end(); ++i)
+	{
+		cout << *i << endl;
+	}*/
+
+	Stack<char> stack;
+
+	char chText[] = "textTEXT";
+	for (int i = 0; i < strlen(chText); i++)
+	{
+		stack.push(chText[i]);
+	}
+	for (int i = 0; i < stack.size();)
+	{
+		cout << stack.pop();
+	}
+	cout << endl;
+
+	CStackArray<int> stackArray;
+	for (int i = 0; i < 10; i++)
+	{
+		stackArray.push(i);
+	}
+	for (int i = 0; i < stackArray.size();)
+	{
+		cout << stackArray.pop();
+	}
 }

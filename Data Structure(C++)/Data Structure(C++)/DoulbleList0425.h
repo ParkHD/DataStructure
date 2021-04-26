@@ -224,6 +224,26 @@ public:
 	{
 		return m_size <= 0;
 	}
-
+	void sort(bool (*Func)(const T&, const T&))
+	{
+		iterator iter;
+		iterator end_iter = end();
+		--end_iter;
+		for (iter = begin(); iter != end_iter; ++iter)
+		{
+			iterator iter1 = iter;
+			++iter1;
+			iterator end_iter1 = end();
+			for (; iter1 != end_iter1; ++iter1)
+			{
+				if (Func(iter.m_pNode->value, iter1.m_pNode->value))
+				{
+					T temp = iter.m_pNode->value;
+					iter.m_pNode->value = iter1.m_pNode->value;
+					iter1.m_pNode->value = temp;
+				}
+			}
+		}
+	}
 						
 };
