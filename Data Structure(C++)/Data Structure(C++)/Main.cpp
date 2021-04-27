@@ -4,6 +4,7 @@
 #include "연결리스트.h"
 #include "DoulbleList0425.h"
 #include "Stack.h"
+#include "Queue.h"
 using namespace std;
 
 struct ex
@@ -18,8 +19,32 @@ bool func(const int& a, const int& b)
 {
 	return a > b;
 }
+
+#include "미로뻐킹.h"
 int main()
 {
+	MazeManager manager;
+	vector<string> stage = 
+	{
+		"######S###",
+		"###### ###",
+		"###### ###",
+		"###    ###",
+		"### ######",
+		"### ######",
+		"#        E",
+		"# ### ####",
+		"# ###    #",
+		"#   ######",
+		"##########"
+	};
+	manager.InitBackGround(stage);
+	manager.ShowBackGround();
+
+#pragma region MyRegion
+
+
+
 	/*vector<int> vec;
 
 	CLinkedList<int> list;
@@ -84,7 +109,7 @@ int main()
 		cout << *i << endl;
 	}*/
 
-	Stack<char> stack;
+	/*Stack<char> stack;
 
 	char chText[] = "textTEXT";
 	for (int i = 0; i < strlen(chText); i++)
@@ -105,5 +130,40 @@ int main()
 	for (int i = 0; i < stackArray.size();)
 	{
 		cout << stackArray.pop();
+	}*/
+
+
+	/*QueueList<int> queue;
+	queue.push(10);
+	queue.push(5);
+	queue.push(12);
+
+	cout << queue.pop() << endl;
+	cout << queue.pop() << endl;
+	cout << queue.pop() << endl;
+	cout << queue.size() << endl;
+
+	queue.push(10);
+	queue.push(5);
+	queue.push(12);
+
+	queue.clear();
+	cout << queue.size() << endl;*/
+
+
+	/*CircleQueue<int, 5> circleQue;
+
+	for (int i = 0; i < 5; i++)
+	{
+		circleQue.push(i);
 	}
+	for (int i = 0; i < 3 ; i++)
+	{
+		cout << circleQue.pop() << endl;
+	}
+	cout << circleQue.size() << endl;
+	circleQue.clear();
+	cout << circleQue.size();*/
+#pragma endregion
+
 }
