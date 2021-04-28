@@ -1,0 +1,8 @@
+﻿  main.cpp
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(71,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(73,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(82,39): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(82,64): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(101,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Project13\Project13\main.cpp(123,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Project13.vcxproj -> C:\Users\guseh\source\repos\Project13\Debug\Project13.exe
