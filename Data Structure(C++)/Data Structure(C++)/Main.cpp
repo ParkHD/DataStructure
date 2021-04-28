@@ -19,7 +19,13 @@ bool func(const int& a, const int& b)
 {
 	return a > b;
 }
-
+enum ex1
+{
+	LEFT,
+	right,
+	up,
+	down,
+};
 #include "¹Ì·Î»µÅ·.h"
 int main()
 {
@@ -33,14 +39,13 @@ int main()
 		"### ######",
 		"### ######",
 		"#        E",
-		"# ### ####",
+		"# ### ## #",
 		"# ###    #",
 		"#   ######",
 		"##########"
 	};
 	manager.InitBackGround(stage);
-	manager.ShowBackGround();
-
+	manager.SearchMaze();
 #pragma region MyRegion
 
 

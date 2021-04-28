@@ -2,6 +2,7 @@
 #include<vector>
 #include<stack>
 #include<iostream>
+#include<Windows.h>
 using namespace std;
 
 enum MAZE_KEY
@@ -54,18 +55,22 @@ public:
 		switch (vec)
 		{
 		case VECTOR::Up:
-			this->y -= 1;
-			break;
-		case VECTOR::Down:
-			this->y += 1;
-			break;
-		case VECTOR::Left:
 			this->x -= 1;
 			break;
-		case VECTOR::Right:
+		case VECTOR::Down:
 			this->x += 1;
 			break;
+		case VECTOR::Left:
+			this->y -= 1;
+			break;
+		case VECTOR::Right:
+			this->y += 1;
+			break;
 		}
+	}
+	void Show()
+	{
+		cout << "(" << x << ", " << y << ")" << endl;
 	}
 	Vector2 operator +(Vector2 a)
 	{
@@ -84,12 +89,20 @@ class MazeManager
 	stack<Vector2> searchPath;
 	vector<Vector2> optimalPath;
 
+	vector<VECTOR> vec; // enum  for문
+
 	int searchCount = 0;
 	bool isEndSearch = false;
 
 public:
 	void InitBackGround(vector<string> stage)
 	{
+		vec.push_back(VECTOR::Left);
+		vec.push_back(VECTOR::Right);
+		vec.push_back(VECTOR::Up);
+		vec.push_back(VECTOR::Down);
+
+
 		backGround = stage;
 		maxSize = Vector2(stage.size(), stage[0].size());
 
@@ -115,13 +128,27 @@ public:
 	}
 	void ShowBackGround()
 	{
+		system("cls");
+		if (isEndSearch)
+		{
+			for (int i = 0; i < searchPath.size();)
+			{
+				searchPath.top().Show();
+				searchPath.pop();
+			}
+		}
 		cout << "시작점 : " << startPos.x <<" "<< startPos.y << endl;
 		cout << "도착점 : " << endPos.x << " " << endPos.y << endl;
 		for (int i = 0; i < backGround.size(); i++)
 		{
 			for (int j = 0; j < backGround[0].size(); j++)
 			{
-				cout << backGround[i][j];
+				if (playerPos.IsEquals(Vector2(i, j)))
+				{
+					cout << (char)MAZE_KEY::Player;
+				}
+				else 
+					cout << backGround[i][j];
 
 			}
 			cout << endl;
@@ -147,43 +174,36 @@ public:
 		// 해당 위치의 문자가 Blank일때.
 		return (word != MAZE_KEY::Wall);
 	}
-	vector<Vector2> SearchMaze()
+	void SearchMaze()
 	{
 		if (playerPos.IsEquals(endPos))
 		{
 			searchPath.push(playerPos);
-			optimalPath = searchPath;
 			isEndSearch = true;
 			
-			ShowBackground();
-			Console.WriteLine("골인 지점");
-			Console.ReadLine();
+			ShowBackGround();
 
-			return null;
+			return;
 		}
 
 		int myIndex = searchCount++;
-
-		for (VECTOR vec = 0; vec < VECTOR.Count; vec++)
+		
+		for (int i =0;i<vec.size(); i++)
 		{
-			if (isEndSearch)
-				break;
+			/*if (isEndSearch)
+				break;*/
 
-			ShowBackground();
-			bool isValid = IsValidMove(playerPos, vec);
+			ShowBackGround();
+			bool isValid = IsValidMove(playerPos, vec[i]);
 
-			Console.WriteLine("============================");
-			Console.WriteLine("[SearchMaze{0}] vec : {1}", myIndex, vec.ToString());
-			Console.WriteLine("{0} 방향으로 {1}", vec, isValid ? "이동 할 수 있습니다." : "이동할 수 없습니다.");
-			Console.WriteLine("============================");
-			Thread.Sleep(50);
+			Sleep(50);
 
 			// 해당 방향으로 이동.
 			if (isValid)
 			{
 				// 움직임.
-				searchPath.Push(playerPos); // 이전 위치 저장.
-				playerPos.AddVector(vec);
+				searchPath.push(playerPos); // 이전 위치 저장.
+				playerPos.AddVector(vec[i]);
 
 				SearchMaze();
 			}
@@ -192,14 +212,13 @@ public:
 		// 여전히 찾고 있을 경우.
 		if (!isEndSearch)
 		{
-			ShowBackground();
-			Console.WriteLine("[SearchMaze{0}]", myIndex);
-			Console.WriteLine("더이상 길이 없습니다. 되돌아 갑니다. : {0}", searchPath.Peek().ToString());
-			Thread.Sleep(50);
+			ShowBackGround();
+			Sleep(50);
 
-			playerPos = searchPath.Pop();
+			playerPos = searchPath.top();
+			searchPath.pop();
 		}
 
-		return searchPath.ToArray();
+		return ;
 	}
 };

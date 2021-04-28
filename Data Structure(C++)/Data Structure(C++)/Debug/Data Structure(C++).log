@@ -1,6 +1,8 @@
 ﻿  Main.cpp
-C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(77,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(79,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(98,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(100,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(112,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(114,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(134,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(142,21): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(144,22): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\guseh\source\repos\Data Structure(C++)\Data Structure(C++)\미로뻐킹.h(191,18): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   Data Structure(C++).vcxproj -> C:\Users\guseh\source\repos\Data Structure(C++)\Debug\Data Structure(C++).exe
