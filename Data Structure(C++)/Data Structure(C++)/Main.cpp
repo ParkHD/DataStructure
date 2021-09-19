@@ -1,10 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <time.h>
-#include "���Ḯ��Ʈ.h"
+#include "¿¬°á¸®½ºÆ®.h"
 #include "DoulbleList0425.h"
 #include "Stack.h"
 #include "Queue.h"
+
 using namespace std;
 
 struct ex
@@ -26,7 +27,7 @@ enum ex1
 	up,
 	down,
 };
-#include "�̷λ�ŷ.h"
+#include "¹Ì·Î»µÅ·.h"
 int main()
 {
 	MazeManager manager;
